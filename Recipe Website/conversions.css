@@ -1,0 +1,143 @@
+/* Light blue background color for page*/
+body {
+  background-color: #B3D5F6;     
+  padding-bottom: 10%;           
+}
+
+/* Fixed navigation bar at the bottom of the page */
+.navbar {
+  position: fixed;              
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FF796E;    
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000;               
+}
+
+/* Navbar links */
+.navbar a {
+  color: #fff8dc;                
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Navbar link hover effect */
+.navbar a:hover {
+  color: #B3D5F6;                
+}
+
+/* Page Title Styling */
+.pageTitle {
+  text-align: center;
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 2.8rem;
+  margin-top: 30px;
+  color: #FF796E;
+}
+
+/* Subheading for ingredient sections */
+h2 {
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Layout for Both Conversion Tables */
+.bothTables {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Wrapper for individual table sections (dry/wet) */
+.conversionSection {
+  flex: 1;  /* Each section takes equal width */
+}
+
+/* Table Styling */
+.conversionTable {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  border-collapse: collapse;
+  background-color: #fff8dc;     
+  font-family: 'Fredoka', Sans-Serif;
+  font-size: 1.2rem;
+  color: #A1C0AC;              
+  border: 2px solid #ddd;
+}
+
+/* Table headers */
+.conversionTable th {
+  text-align: center;
+  background-color: #A1C0AC; 
+  color: white;
+}
+
+/* Table cells */
+.conversionTable td {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: left;
+}
+
+/* Dark Mode Global Background and Text */
+.dark-mode {
+  background-color: #74ACE3;
+  color: #f0f0f0;
+}
+
+/* Dark mode table styling */
+.dark-mode .conversionTable {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+/* Dark mode navbar */
+.dark-mode .navbar {
+  background-color: #BB5A52; 
+}
+
+/* Dark mode nav links */
+.dark-mode .navbar a {
+  color: #f0f0f0;
+}
+
+/* Hover effect for nav links in dark mode */
+.dark-mode .navbar a:hover {
+  color: #74ACE3;
+}
+
+/* Toggle Button Styling */
+.dark-toggle {
+  background: none;
+  border: 2px solid #fff8dc;
+  color: #fff8dc;
+  font-family: 'Playwrite DK Loopet', cursive;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dark mode toggle */
+.dark-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
