@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Saved Recipes</title>
+    <link rel="stylesheet" href="saved.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <!--Navigation set up-->
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="addNew.html">Add Recipes</a>
+      <a href="saved.html">Saved Recipes</a>
+      <a href="conversions.html">Conversions</a>
+      <button onclick="toggleDarkMode()" class="dark-toggle">Toggle Dark Mode</button>
+    </nav>
+
+    <!--Container where recipes will appear-->
+    <div id="cardGrid" class="cards-layout">
+      <!-- Loaded recipe cards will appear here -->
+    </div>
+
+    <script>
+      // Get references to area where recipe cards will appear
+      const cardGrid = document.getElementById('cardGrid');
+
+      // Creates recipe cards with a clickable titles and delete button
+      function createCard(title, url) {
+        const card = document.createElement('div');
+        card.className = 'recipe-card';
+        
+        // Sets inner HTML for recipe links and delete button
+        card.innerHTML = `
+          <button class="delete-btn">&times;</button>
+          <a href="${url}" target="_blank">${title}</a>
+        `;
+
+        //Looks for when the delete button is pressed
+        card.querySelector('.delete-btn').addEventListener('click', () => {
+          card.remove();
+          deleteRecipe(title, url);
+        });
+
+        //Adds card to grid when page is loaded
+        cardGrid.appendChild(card);
+      }
+
+      // Loads saved recipes from storage
+      function loadSavedRecipes() {
+        const saved = JSON.parse(localStorage.getItem('recipes')) || [];
+        saved.forEach(recipe => {
+          createCard(recipe.title, recipe.url);
+        });
+      }
+
+      // Delete recipe from storage
+      function deleteRecipe(title, url) {
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        recipes = recipes.filter(recipe => !(recipe.title === title && recipe.url === url));
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+      }
+
+      //Toggle dark mode on and off, and store setting you want
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        const mode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("mode", mode);
+      }
+
+      //When page is first loaded, checks if previous page was on dark mode
+      window.addEventListener("DOMContentLoaded", function () {
+        // Load saved dark mode setting
+        if (localStorage.getItem("mode") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+
+        // Load and show recipes
+        loadSavedRecipes();
+      });
+    </script>
+  </body>
+</html>
