@@ -1,0 +1,151 @@
+/* Light blue background color for the page */
+body {
+  background-color: #B3D5F6;
+}
+
+/* Styling for individual recipe cards */
+.recipe-card {
+  width: 250px;
+  height: 180px;
+  background-color: #fff8dc;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 12px;
+  margin: 10px;
+}
+
+/* Style for the text link inside each recipe card */
+.recipe-card a {
+  color: #A1C0AC;
+  text-decoration: none;
+}
+
+/* Hide any empty recipe cards */
+.recipe-card:empty {
+  display: none;
+}
+
+/* Grid layout for all recipe cards */
+#cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Form input fields styling */
+form input {
+  width: 150px;
+  height: 40px;
+  color: #3060E1;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px;
+}
+
+/* Placeholder text styling for input fields */
+form input::placeholder {
+  color: #DDCEF0;
+}
+
+/* Styling for the "Add Recipe" button */
+form button {
+  background-color: #FF796E;
+  color: #fff8dc;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the Add Recipe button */
+form button:hover {
+  background-color: #e06559;
+}
+
+/* Fixed navigation bar at the bottom of the page */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FF796E;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000; /* Makes sure navbar stays on top */
+}
+
+/* Navbar link styling */
+.navbar a {
+  color: #fff8dc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+  color: #B3D5F6;
+}
+
+/* Dark mode background and text */
+.dark-mode {
+  background-color: #74ACE3;
+  color: #f0f0f0;
+}
+
+/* Recipe card styling in dark mode */
+.dark-mode .recipe-card {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+/* Navbar background in dark mode */
+.dark-mode .navbar {
+  background-color: #BB5A52;
+}
+
+/* Navbar links in dark mode */
+.dark-mode .navbar a {
+  color: #f0f0f0;
+}
+
+/* Navbar link hover color in dark mode */
+.dark-mode .navbar a:hover {
+  color: #add8e6;
+}
+
+/* Styling for the dark mode toggle button */
+.dark-toggle {
+  background: none;
+  border: 2px solid #fff8dc;
+  color: #fff8dc;
+  font-family: 'Playwrite DK Loopet', cursive;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dark mode button */
+.dark-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
