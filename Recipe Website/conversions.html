@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Conversions</title>
+    <link rel="stylesheet" href="conversions.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!--Navigation bar set up-->
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="addNew.html">Add Recipes</a>
+      <a href="saved.html">Saved Recipes</a>
+      <a href="conversions.html">Conversions</a>
+      <button onclick="toggleDarkMode()" class="dark-toggle">Toggle Dark Mode</button>
+    </nav>
+
+    <!--Page title-->
+    <h1 class="pageTitle">Ingredient Conversions</h1>
+    
+    <!--Dry Ingredients Conversion Table-->
+    <div class="bothTables">
+      <div class="conversionSection">
+        <h2>Dry Ingredients</h2>
+        <table class="conversionTable">
+          <tr><th>U.S.</th><th>Metric</th></tr>
+          <tr><td>1 cup flour</td><td>120 g</td></tr>
+          <tr><td>1 cup sugar</td><td>200 g</td></tr>
+          <tr><td>1 cup cocoa powder</td><td>100 g</td></tr>
+          <tr><td>1 cup brown sugar</td><td>213 g</td></tr>
+          <tr><td>1 tsp baking powder</td><td>4.8 g</td></tr>
+          <tr><td>1 tsp baking soda</td><td>6 g</td></tr>
+          <tr><td>1 tsp salt</td><td>6 g</td></tr>
+          <tr><td>1 tbsp sugar</td><td>12 g</td></tr>
+        </table>
+      </div>
+
+      <!--Wet Ingredients Conversion Table-->
+      <div class="conversionSection">
+        <h2>Wet Ingredients</h2>
+        <table class="conversionTable">
+          <tr><th>U.S.</th><th>Metric</th></tr>
+          <tr><td>1 cup water</td><td>240 mL</td></tr>
+          <tr><td>1 cup oil</td><td>240 mL</td></tr>
+          <tr><td>1 cup heavy cream</td><td>240 mL</td></tr>
+          <tr><td>1/2 cup yogurt</td><td>118 mL</td></tr>
+          <tr><td>1 tbsp honey</td><td>15 mL</td></tr>
+          <tr><td>1 tsp vanilla</td><td>5 mL</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // Toggles dark mode on or off and saves setting you stay on
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        const mode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("mode", mode);
+      }
+
+      // Checks if dark mode was on or not in the previous page
+      window.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("mode") === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+      });
+    </script>
+  </body>
+</html>
