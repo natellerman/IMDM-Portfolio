@@ -1,0 +1,117 @@
+//Author: Natalie Ellerman
+//Date: 04/10/25
+//Description: Grid of circles designed to represent the beach
+
+let numCells = 8;
+let cellSize;
+let oceanColors = ['#8FD3C3', '#89c2d9', '#6B8C6D'];
+
+function setup() {
+	createCanvas(700, 700);
+	cellSize = width / numCells;
+	rect(0, 0, width, height);
+	rectMode(CENTER);
+	blendMode(MULTIPLY);
+	noStroke();
+}
+
+function draw() {
+	clear()
+	
+//blue section of background
+	noStroke();
+	fill('#89c2d9');
+	beginShape();
+	vertex(0,0);
+	vertex(0,height);
+	vertex(width,height);
+	endShape();
+	
+//yellow section of background	
+	fill('#EDEBC5');
+	beginShape();
+	vertex(700,height);
+	vertex(width,0);
+	vertex(0, 0);
+	endShape(CLOSE);
+
+//grid setup
+	let step = width / numCells;
+
+	for (let y = 0; y < numCells; y++) {
+		for (let x = 0; x < numCells; x++) {
+			let xpos = x * step + step / 2;
+			let ypos = y * step + step / 2;
+			let d = map(dist(x * step + step / 2, y * step + step / 2, mouseX, mouseY) + 5, 70, 1000, 1, 10);
+			
+//White borders on circles where the background touches
+				if (x == y) {
+				stroke(255);
+				strokeWeight(5);
+			} else {
+				noStroke();
+			}
+//Ocean side of the grid
+			if (x <= y) {
+				drawShape(xpos, ypos, step / d);
+			}
+//Sand side of the grid
+			if (x >= y) {
+				drawShape2(xpos, ypos, step / d, x, y);
+				drawSandDetails();
+			}
+		}
+	}
+}
+
+//Set overlapping and color of ocean circles
+function drawShape(x, y, s, xIndex, yIndex) {
+if (xIndex >= yIndex) {
+  palette = sandColors;
+} else {
+  palette = oceanColors;
+}
+	let outerColor = color(random(palette));
+	outerColor.setAlpha(150);
+	fill(outerColor);
+	circle(x, y, s);
+
+	let innerColor = color(random(palette));
+	innerColor.setAlpha(120);
+	fill(innerColor);
+	circle(x, y, s / 2);
+}
+
+//Set overlapping and color of sand circles
+function drawShape2(x, y, s) {
+	fill('#D6B69B');
+	circle(x, y, s / 2);
+
+	blendMode(BLEND);
+	fill(255, 255, 255, 50);
+	circle(x, y, s);
+	blendMode(MULTIPLY);
+}
+
+//Grid of squares in the sand section
+function drawSandDetails() {
+	let step = width / numCells;
+
+	for (let y = 0; y < numCells; y++) {
+		for (let x = 0; x < numCells; x++) {
+			if (x >= y) {
+				let xpos = x * step + step / 2 + random(-step / 4, step / 4);
+				let ypos = y * step + step / 2 + random(-step / 4, step / 4);
+				noStroke();
+				fill(220, 180, 140, 80);
+				ellipse(xpos, ypos, random(2, 5), random(2, 5));
+			}
+		}
+	}
+}
+
+//Saves sketch
+function keyPressed() {
+	if (key == 's') {
+		save('Ellerman-Lab06.jpg'); }
+}
