@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="Intro.css">
+    <!--Fonts used throughout website-->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--Navigation Bar set up-->
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="addNew.html">Add Recipes</a>
+      <a href="saved.html">Saved Recipes</a>
+      <a href="conversions.html">Conversions</a>
+    </nav>
+    
+    <!--First page of introduction and welcome button leading to second page of intro-->
+    <div class="recipeBox">
+      <img id="boxImage" src="https://uploads.onecompiler.io/43a6a5644/43hjm8c9f/FinalClosed.png" alt="Closed Recipe Box">
+      <a href="#" class="overlay-text" onclick="revealButton()">Welcome!</a>
+    </div>
+
+    <!--Second page of introduction, text on top of image, and button to go into website-->
+    <div class="intro-container" id="openBoxSection" style="display: none;">
+      <img class="intro-image2" src="https://uploads.onecompiler.io/43a6a5644/43hjm8c9f/FinalOpened.png" alt="Open Box">
+      <div class="intro-text">
+        <h1>Welcome to My Recipe Box</h1>
+        <p>Create a digital recipe box<br>of your favorite online recipes.<br>Click below to explore and add your own!</p>
+        <a href="addNew.html" class="enter-button" id="enterButton">Enter</a>
+        </div>
+    </div>
+
+    <script>
+      //Buttons on first two pages and allows for text over images
+      function revealButton() {
+        document.getElementById('boxImage').style.display = 'none';
+        document.querySelector('.overlay-text').style.display = 'none';
+        document.getElementById('openBoxSection').style.display = 'block';
+      }
+
+    </script>
+  </body>
+</html>
