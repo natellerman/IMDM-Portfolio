@@ -1,0 +1,122 @@
+/*Recipe box image container (Closed Box) */
+.recipeBox {
+  position: relative;
+  display: inline-block;
+}
+
+/* Image inside the closed recipe box */
+.recipeBox img {
+  display: block;
+  width: 1440px;
+  height: 700px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Welcome button text positioned over the closed box */
+.overlay-text {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #6383DB;
+  font-size: 2.2rem;
+  font-family: 'Playwrite DK Loopet', cursive;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*Intro Page - Open Box Section*/
+.intro-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* Image of the open box */
+.intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Container for intro text overlay on open box */
+.intro-text {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: #FF796E;
+  padding: 30px;
+}
+
+/* Title inside intro text */
+.intro-text h1 {
+  font-family: 'Playwrite DK Loopet', cursive;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* Paragraph inside intro text */
+.intro-text p {
+  top: 40%;
+  font-family: 'Fredoka', Sans-Serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Enter Button below Intro text */
+.enter-button {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF796E;
+  border: none;
+  padding: 4px 10px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effect for Enter button */
+.enter-button:hover {
+  background-color: #74ACE3;
+}
+
+/*Navigation bar on bottom on page*/
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FF796E;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000; /* Keeps it on top of other elements */
+}
+
+/* Navigation links */
+.navbar a {
+  color: #fff8dc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+  color: #74ACE3;
+}
