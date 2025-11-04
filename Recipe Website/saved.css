@@ -1,0 +1,134 @@
+/* Light blue background color for page*/
+body {
+  background-color: #B3D5F6;
+}
+
+/* Fixed navigation bar at the bottom of the page */
+.navbar {
+  position: fixed;    
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FF796E;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center; 
+  gap: 30px;     
+  font-family: 'Playwrite DK Loopet', cursive;
+  font-size: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000;  /* Stay on top of other elements */
+}
+
+/* Navbar link styling */
+.navbar a {
+  color: #fff8dc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+  color: #AACFEE;
+}
+
+/* Layout for Recipe Cards Grid */
+.cards-layout {
+  display: flex;
+  flex-wrap: wrap;            
+  justify-content: center;    
+  gap: 20px;             
+  padding: 40px 20px;
+}
+
+/* Recipe Card Styling */
+.recipe-card {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  background-color: #fff8dc;  
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 12px;
+  margin: 10px;
+}
+
+/* Link inside each recipe card */
+.recipe-card a {
+  color: #A1C0AC;            
+  text-decoration: none;
+}
+
+/* Delete Button (X) Styling */
+.delete-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f7edc1;     
+  border-radius: 50%;
+  border: #fff8dc;
+  color: #c39be8;           
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Hover effect for delete button */
+.delete-btn:hover {
+  color: #B3D5F6;           
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #74ACE3; 
+  color: #f0f0f0;            
+}
+
+/* Recipe cards in dark mode */
+.dark-mode .recipe-card {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+/* Navbar in dark mode */
+.dark-mode .navbar {
+  background-color: #BB5A52; 
+}
+
+/* Navbar links in dark mode */
+.dark-mode .navbar a {
+  color: #f0f0f0;
+}
+
+/* Hover color for nav links in dark mode */
+.dark-mode .navbar a:hover {
+  color: #add8e6;             
+}
+
+/* Dark Mode Toggle Button */
+.dark-toggle {
+  background: none;
+  border: 2px solid #fff8dc;
+  color: #fff8dc;
+  font-family: 'Playwrite DK Loopet', cursive;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for toggle button */
+.dark-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
